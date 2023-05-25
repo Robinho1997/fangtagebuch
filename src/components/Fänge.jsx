@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { onValue, ref, remove } from "firebase/database";
-function Fänge(props) {
+import { nanoid } from 'nanoid'
+import { database,fängeInDB } from "../Firebase";
+
+
+
+function Fänge() {
     const [fetchedFänge, setFetchedFänge] = useState();
 
     function removeFangFromDB(key) {
-        let exactLocationOfItemInDB = ref(props.database, `fänge/${key}`);
+        let exactLocationOfItemInDB = ref(database, `fänge/${key}`);
         remove(exactLocationOfItemInDB);
     }
 
     useEffect(() => {
-        onValue(props.fängeInDB, function (snapshot) {
+        onValue(fängeInDB, function (snapshot) {
             if (snapshot.exists()) {
                 let itemsArray = Object.values(snapshot.val())
 
@@ -17,7 +22,7 @@ function Fänge(props) {
                     let { fischart, datum, gewässer, größe, imageUrl, köder, uhrzeit } = item;
                     let itemKey = Object.keys(snapshot.val())[index]
 
-                    return <div key={1000} style={{ position: "relative" }}>
+                    return <div key={nanoid()} style={{ position: "relative" }}>
                         <div id="div-remove-btn" style={{ borderTop: "none" }}>
                             <button onClick={() => removeFangFromDB(itemKey)} id="remove-item-from-db-btn">
                                 <span className="material-symbols-outlined">

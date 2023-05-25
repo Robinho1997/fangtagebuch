@@ -1,10 +1,11 @@
 import { push } from "firebase/database";
 import React, { useState } from "react";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage"
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage"
+import { storage, fängeInDB } from "../Firebase";
 
 function Form(props) {
-    const storage = getStorage(props.app);
-    const ImagesReference = ref(storage, "images");
+
+    const isLoggedIn = props.user;
 
     const [fischart, setFischart] = useState(null);
     const [größe, setGröße] = useState(null);
@@ -18,18 +19,23 @@ function Form(props) {
     const [isFormDisplayed, setIsFormDisplayed] = useState(false);
     const [selectedFileName, setSelectedFileName] = useState("");
 
+    const ImagesReference = ref(storage, "images");
 
 
-    const handleImageFileSelect = (event) => {
-        let file = event.target.files[0]
+    function toggleForm() {
+        setIsFormDisplayed(prev => !prev)
+    };
 
-        setImageFile(event.target.files[0])
+    function handleImageFileSelect(e)  {
+        let file = e.target.files[0]
+
+        setImageFile(e.target.files[0])
         if (file) {
             setSelectedFileName(file.name)
         }
-    }
+    };
 
-    const handleImageUpload = () => {
+    function handleImageUpload() {
         return new Promise((resolve, reject) => {
             setSelectedFileName("")
             if (imageFile) {
@@ -81,7 +87,7 @@ function Form(props) {
             handleImageUpload().then((url) => {
                 inputData.imageUrl = url;
 
-                push(props.fängeInDB, inputData);
+                push(fängeInDB, inputData);
 
                 window.scrollTo({
                     top: 0,
@@ -123,14 +129,11 @@ function Form(props) {
 
 
 
-    function toggleForm() {
-        setIsFormDisplayed(prev => !prev)
-    }
 
     return (
         <div>
             {isFormDisplayed ?
-                <div>
+                <div style={{marginBottom:"159px"}}>
                     <button className="toggleFormBtn" onClick={toggleForm}>Formular schließen
                         <span className="material-symbols-outlined">
                             do_not_disturb_on
