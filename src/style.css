@@ -7,7 +7,8 @@ body {
     font-size: 20px;
     background-color: rgb(225, 252, 252);
     font-family: 'Comfortaa', cursive;
-    padding-bottom: 100px;
+
+
 }
 
 * {
@@ -31,7 +32,9 @@ form {
     margin: 0 auto;
 }
 
-input[type=text] {
+input[type=text],
+input[type=password],
+input[type=email] {
     border-radius: 5px;
     border: 1px solid grey;
     padding: 10px 20px;
@@ -39,7 +42,9 @@ input[type=text] {
     margin-bottom: 15px;
 }
 
-input[type=text]:focus {
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus {
     border: 2px solid aqua;
     outline: none;
 }
@@ -132,4 +137,162 @@ button {
     position: absolute;
     right: 0;
     top: 0;
+}
+
+/*
+! register styles
+*/
+
+.fishing-img {
+    width: 350px;
+    height: 400px;
+}
+
+.authentification-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin-top: 10%;
+    margin-inline: 10%;
+    margin: 0 auto;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 30%;
+    border-radius: 5px;
+    text-align: center;
+    background-color: gainsboro;
+    width: 90vw;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+    padding: 2%;
+}
+
+.authentification-form h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.form-btn {
+    padding: 10px;
+    background-color: aqua;
+    border: 1px solid grey;
+    border-radius: 5px;
+
+}
+
+
+/*
+! login styles here
+*/
+
+
+/* 
+! Navbar styles here
+*/
+
+.navbar {
+    display: flex;
+    gap: 10px;
+    background-color: aqua;
+    padding: 10px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  
+}
+
+.welcome-div {
+    background-image: url("https://images.unsplash.com/photo-1632862316541-0b75b0126544?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80");
+    background-size: cover;
+    padding-top: 50px;
+    font-weight: 700;
+    height: 531px;
+    color: white;
+   
+   
+}
+
+.shadow {
+    filter: drop-shadow(10px 10px 50px black);
+   font-size: 22px;
+    margin-top: 50px;
+    margin-inline: 2%;
+}
+
+.navbar button {
+    padding: 10px 20px;
+    background-color: rgb(225, 252, 252);
+    border-radius: 5px;
+    font-weight: 700;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+}
+
+.navbar button:hover {
+    background-color: rgb(176, 247, 247);
+}
+
+.navbar span {
+    font-size: 20px;
+}
+
+
+
+
+
+.close-btn {
+    width: min-content;
+    top: 2px;
+    position: absolute;
+    right: 2px;
+    border: none;
+    color: red;
+    background-color: inherit;
+    cursor: pointer;
+    width: 23px;
+    padding: 0;
+    height: 23px;
+    border-radius: 50%;
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+
+
+
+}
+
+footer p {
+    font-size: 14px;
+}
+
+
+.start-page-content {
+  
+    text-align: center;
+    line-height: 30px;
+}
+
+.start-page-content button {
+
+    padding: 10px 15px;
+    margin-block: 30px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background-color: aqua;
+}
+
+.start-page-content h2 {
+    text-align: center;
 }
