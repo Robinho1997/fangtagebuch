@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/homepage.css";
 
-function Homepage() {
+function Homepage(props) {
   return (
     <main className="homepage">
       <div className="background-img-holder">
@@ -14,7 +14,7 @@ function Homepage() {
           <button
             className="homepage-register-btn"
             onClick={() => {
-              setDisplayRegisterForm((prev) => !prev);
+              props.setDisplayRegisterForm((prev) => !prev);
             }}
           >
             JETZT KOSTENLOS REGISTRIEREN!
@@ -55,7 +55,7 @@ function Homepage() {
         <button
           className="homepage-register-btn"
           onClick={() => {
-            setDisplayRegisterForm((prev) => !prev);
+            props.setDisplayRegisterForm((prev) => !prev);
           }}
         >
           KOSTENLOSEN ACCOUNT ERSTELLEN!
