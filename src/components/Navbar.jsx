@@ -1,6 +1,7 @@
 import React from "react";
 import { signOut } from "firebase/auth";
 import { authentication } from "../Firebase";
+import icon from "/public/fisherman.svg";
 
 function Navbar(props) {
   function handleSignOut() {
@@ -15,7 +16,7 @@ function Navbar(props) {
 
   return (
     <nav className="navbar">
-    <img className="fisherman-icon" src="/public/fisherman.svg"/>
+      <img className="fisherman-icon" src={icon} />
       <div className="navbar-buttons-div">
         <button
           onClick={() => {

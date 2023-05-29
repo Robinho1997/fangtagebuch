@@ -1,4 +1,5 @@
 import React from "react";
+import icon from "/public/fisherman.svg";
 
 function Footer() {
   function scrollUp() {
@@ -9,7 +10,7 @@ function Footer() {
     <footer>
       <div className="footer-content">
         <p>&copy; 2023 Angler's Catch Diary. Alle Rechte vorbehalten.</p>
-        <img className="footer-icon" src="/public/fisherman.svg" />
+        <img className="footer-icon" src={icon} />
       </div>
       <span
         onClick={scrollUp}
