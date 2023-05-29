@@ -49,6 +49,10 @@
   font-weight: bold;
 }
 
+.homepage-register-btn:hover {
+  background-color: rgb(250, 188, 72);
+}
+
 @media (max-width: 600px) {
   .hero-section {
     font-size: 22px;

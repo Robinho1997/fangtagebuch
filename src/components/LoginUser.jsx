@@ -40,7 +40,7 @@ function LoginUser(props) {
             <p>{loginMessage}</p>
           ) : (
             <div>
-              <h2>
+              <h2 className="authentification-h2">
                 Login <span className="material-symbols-outlined">login</span>
               </h2>
               <input

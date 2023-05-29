@@ -44,7 +44,7 @@ input[type="email"] {
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus {
-  border: 2px solid aqua;
+  border: 2px solid orange;
   outline: none;
 }
 
@@ -163,7 +163,7 @@ button {
 }
 
 .navbar button:hover {
-  background-color: rgb(176, 247, 247);
+  background-color: rgb(250, 188, 72);
 }
 
 .navbar span {
@@ -252,11 +252,11 @@ button {
 
 .close-btn {
   width: min-content;
-  top: 2px;
+  top: 7px;
   position: absolute;
-  right: 2px;
+  right: 6px;
   border: none;
-  color: red;
+  color: orangered;
   background-color: inherit;
   cursor: pointer;
   width: 23px;
@@ -282,11 +282,13 @@ button {
   left: 0;
   right: 0;
   top: 30%;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
-  background-color: gainsboro;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   width: 90vw;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 30px 30px 15px rgba(0, 0, 0, 0.5);
   padding: 2%;
 }
 
@@ -295,12 +297,14 @@ button {
   align-items: center;
   justify-content: center;
   gap: 15px;
+  color: white;
 }
 
 .form-btn {
   padding: 10px;
-  background-color: rgb(184, 252, 252);
-  border: 1px solid grey;
+  background-color: orange;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   width: 95%;
 }
