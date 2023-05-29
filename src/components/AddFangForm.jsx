@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage"
 import { storage, fängeInDB } from "../Firebase";
 
-function Form(props) {
+function AddFangForm(props) {
 
     const isLoggedIn = props.user;
 
@@ -205,4 +205,4 @@ function Form(props) {
     );
 }
 
-export default Form;
+export default AddFangForm;
