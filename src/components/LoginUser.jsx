@@ -6,7 +6,7 @@ function LoginUser(props) {
   const [inputOfEmail, setInputOfEmail] = useState("");
   const [inputOfPassword, setInputOfPassword] = useState("");
 
-  const [loginMessage, setLoginMessage] = useState("Logged in");
+  const [loginMessage, setLoginMessage] = useState("Login erfolgreich!");
 
   function handleSignIn(e) {
     e.preventDefault();
