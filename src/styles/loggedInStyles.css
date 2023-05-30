@@ -1,0 +1,48 @@
+.user-eintrag {
+  width: 400px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  border: 1px solid;
+  border-radius: 15px;
+  background-color: orange;
+  color: white;
+  position: relative;
+  padding-top: 10px;
+}
+
+.user-single-item-container {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 8%;
+  align-items: center;
+  border-bottom: 1px solid;
+}
+
+.align-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.fish-icon {
+  filter: grayscale(100%) invert(100%);
+  width: 25px;
+}
+
+.delete-user-entry-btn {
+    color: red;
+    right: 0;
+    position: absolute;
+    top: 0;
+  
+}
+
+@media (max-width: 600px) {
+  .user-eintrag {
+    width: 300px;
+  }
+
+  .user-single-item-container {
+    padding-inline: 5%;
+  }
+}
