@@ -17,29 +17,38 @@ function Navbar(props) {
   return (
     <nav className="navbar">
       <img className="fisherman-icon" src={icon} />
-      <div className="navbar-buttons-div">
-        <button
-          onClick={() => {
-            props.setDisplayLoginForm((prev) => !prev);
-          }}
-        >
-          Login
-          <span className="material-symbols-outlined">login</span>
-        </button>
-        <button onClick={handleSignOut}>
-          Logout
-          <span className="material-symbols-outlined">logout</span>
-        </button>
-        <button
-          style={{ marginRight: "50px" }}
-          onClick={() => {
-            props.setDisplayRegisterForm((prev) => !prev);
-          }}
-        >
-          Register
-          <span className="material-symbols-outlined">person_add</span>
-        </button>
-      </div>
+      {!props.user ? (
+        <div className="navbar-buttons-div">
+          <button
+            onClick={() => {
+              props.setDisplayLoginForm((prev) => !prev);
+            }}
+          >
+            Login
+            <span className="material-symbols-outlined">login</span>
+          </button>
+          <button onClick={handleSignOut}>
+            Logout
+            <span className="material-symbols-outlined">logout</span>
+          </button>
+          <button
+            className="register-btn"
+            onClick={() => {
+              props.setDisplayRegisterForm((prev) => !prev);
+            }}
+          >
+            Register
+            <span className="material-symbols-outlined">person_add</span>
+          </button>
+        </div>
+      ) : (
+        <div className="logout-div">
+          <button onClick={handleSignOut}>
+            Logout
+            <span className="material-symbols-outlined">logout</span>
+          </button>
+        </div>
+      )}
     </nav>
   );
 }
