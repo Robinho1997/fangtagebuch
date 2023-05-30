@@ -18,4 +18,4 @@ const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
 export const database = getDatabase(app);
 export const authentication = getAuth(app);
-export const fängeInDB = ref(database, "fänge");
+/**export const fängeInDB = ref(database, `users/${userId}/fänge`); */
