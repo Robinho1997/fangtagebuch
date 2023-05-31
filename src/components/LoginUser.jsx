@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { authentication } from "../Firebase";
 
 function LoginUser(props) {
   const [inputOfEmail, setInputOfEmail] = useState("");
   const [inputOfPassword, setInputOfPassword] = useState("");
-
   const [loginMessage, setLoginMessage] = useState("Login erfolgreich!");
 
   function handleSignIn(e) {
@@ -29,7 +28,7 @@ function LoginUser(props) {
   return (
     <div>
       {props.displayLoginForm && (
-        <div className="authentification-form">
+        <div className={`authentification-form `}>
           <button
             onClick={() => props.setDisplayLoginForm(false)}
             className="close-btn"
