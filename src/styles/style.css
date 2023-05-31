@@ -62,9 +62,6 @@ input[type="file"] {
   flex: 1;
 }
 
-
-
-
 footer {
   margin-top: 50px;
   background-color: #333;
@@ -76,7 +73,6 @@ footer {
   justify-content: center;
   text-align: center;
   gap: 10px;
- 
 }
 
 .footer-content {
@@ -92,12 +88,14 @@ footer p {
 }
 
 button {
+  -moz-appearance: none;
   cursor: pointer;
 }
 
 .fisherman-icon {
   width: 60px;
-  filter: invert(56%) sepia(93%) saturate(606%) hue-rotate(357deg) brightness(102%) contrast(105%);
+  filter: invert(56%) sepia(93%) saturate(606%) hue-rotate(357deg)
+    brightness(102%) contrast(105%);
 }
 
 .footer-icon {
@@ -177,16 +175,11 @@ button {
   margin-right: 50px;
 }
 
-
-
-
-
 .navbar button:hover {
   background-color: rgb(250, 188, 72);
   transition: font-size 1s;
   font-size: 25px;
 }
-
 
 @media (max-width: 600px) {
   .navbar {
@@ -213,7 +206,7 @@ button {
   }
   .register-btn {
     margin-right: 20px;
-  } 
+  }
   .logout-div {
     display: flex;
     justify-content: end;
@@ -221,7 +214,6 @@ button {
     width: 100%;
   }
 }
-
 
 .navbar span {
   font-size: 20px;
@@ -231,16 +223,17 @@ button {
   border: 1px solid grey;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 7px 10px;
   border-radius: 5px;
   background-color: white;
   margin-top: 10px;
+  margin-bottom: 20px;
   cursor: pointer;
 }
 
 .file-upload-icon {
   border: 1px solid grey;
-  padding: 10px;
+  padding: 8px;
   border-radius: 50%;
 }
 
@@ -285,10 +278,12 @@ button {
   border-radius: 5px;
   border: 1px solid grey;
   background-color: white;
+
 }
 
 .toggleFormBtn:hover {
   background-color: orange;
+  color: white;
 }
 
 .upload-btn {
@@ -331,24 +326,18 @@ button {
 */
 
 .authentification-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   max-width: 300px;
-  margin-top: 10%;
-  margin-inline: 10%;
-  margin: 0 auto;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  top: 30%;
   border-radius: 10px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  width: 90vw;
   box-shadow: 30px 30px 15px rgba(0, 0, 0, 0.5);
   padding: 2%;
 }
@@ -366,6 +355,14 @@ button {
   background-color: orange;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
+  border-radius: 15px;
   width: 95%;
+  font-size: 20px;
+}
+
+@media(max-width:500px) {
+  .authentification-form {
+    background-color: rgb(249, 197, 102);
+ 
+  }
 }

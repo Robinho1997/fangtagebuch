@@ -1,6 +1,10 @@
+.user-eintrag-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .user-eintrag {
   width: 400px;
-  margin: 0 auto;
   margin-bottom: 60px;
   border: 1px solid;
   border-radius: 15px;
@@ -8,7 +12,18 @@
   color: white;
   position: relative;
   padding-top: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
+
+.user-img {
+  width: 420px;
+  height: 394px;
+  border-radius: 15px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 
 .user-single-item-container {
   display: flex;
@@ -30,19 +45,46 @@
 }
 
 .delete-user-entry-btn {
-    color: red;
-    right: 0;
-    position: absolute;
-    top: 0;
+  color: red;
+  right: 0;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+
+
+@media (max-width: 800px) {
+  .user-eintrag-wrapper {
+    flex-wrap: wrap-reverse;
+  }
+  .user-img {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 15px;
+    margin-bottom: -3px;
+    width: 400px;
+  }
+
+  .user-eintrag {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 15px;
+    margin-top: 0;
+    margin-bottom: 110px;
   
+  }
 }
 
 @media (max-width: 600px) {
   .user-eintrag {
-    width: 300px;
+    width: 330px;
   }
 
   .user-single-item-container {
     padding-inline: 5%;
+  }
+
+  .user-img {
+    width: 330px;
   }
 }
