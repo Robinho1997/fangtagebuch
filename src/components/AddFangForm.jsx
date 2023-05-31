@@ -1,6 +1,12 @@
 import React, { useState } from "react";
-import { getDatabase, set, push, ref } from "firebase/database";
+import { set, push, ref } from "firebase/database";
 import { storage, database } from "../Firebase";
+import {
+  ref as storageRef,
+  uploadBytes,
+  getDownloadURL,
+} from "firebase/storage";
+import fishIcon from "/public/fish (1).png";
 
 function AddFangForm(props) {
   const userId = props.user.uid;
@@ -12,14 +18,44 @@ function AddFangForm(props) {
   const [uhrzeit, setUhrzeit] = useState(null);
   const [datum, setDatum] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
-
   const [isFormDisplayed, setIsFormDisplayed] = useState(false);
-  const [selectedFileName, setSelectedFileName] = useState("");
 
+  const [selectedFileName, setSelectedFileName] = useState("");
   const [imageFile, setImageFile] = useState(null);
 
+  const ImagesReference = storageRef(storage, "images");
+
+  function handleImageFileSelect(e) {
+    let file = e.target.files[0];
+
+    setImageFile(e.target.files[0]);
+    if (file) {
+      setSelectedFileName(file.name);
+    }
+  }
   function handleImageUpload() {
-    console.log("img");
+    return new Promise((resolve, reject) => {
+      setSelectedFileName("");
+      if (imageFile) {
+        const fileReference = storageRef(ImagesReference, imageFile.name);
+        uploadBytes(fileReference, imageFile)
+          .then((snapshot) => {
+            console.log("File uploaded successfully.");
+            return getDownloadURL(fileReference);
+          })
+          .then((url) => {
+            setImageUrl(url);
+            resolve(url);
+          })
+          .catch((error) => {
+            console.log("Error uploading file:", error);
+            reject(error);
+          });
+      } else {
+        console.warn("No file selected");
+        reject(new Error("No file selected"));
+      }
+    });
   }
 
   function toggleForm() {
@@ -45,16 +81,19 @@ function AddFangForm(props) {
         gewässer: gewässer,
         uhrzeit: uhrzeit,
         datum: datum,
+        imgUrl: null,
       };
 
-      const userRef = ref(database, `user/${userId}/data`);
-      const newChildRef = push(userRef);
+      handleImageUpload().then(() => {
+        const userRef = ref(database, `user/${userId}/data`);
+        const newChildRef = push(userRef);
+        inputData.imgUrl = imageUrl;
+        set(newChildRef, inputData);
 
-      set(newChildRef, inputData);
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
       });
     } else {
       e.preventDefault();
@@ -91,15 +130,19 @@ function AddFangForm(props) {
     <div>
       {isFormDisplayed ? (
         <div style={{ paddingTop: "120px" }}>
-          <h1 style={{ textAlign: "center", color:"orange"  }}>Fangtagebuch</h1>
-          <button className="toggleFormBtn" onClick={toggleForm}>
+          <h1 style={{ textAlign: "center", color: "orange" }}>Fangtagebuch</h1>
+          <button
+            style={{ backgroundColor: "orange" }}
+            className="toggleFormBtn"
+            onClick={toggleForm}
+          >
             Formular schließen
             <span className="material-symbols-outlined">do_not_disturb_on</span>
           </button>
           <form>
             <label htmlFor="fischart">
               Fischart
-              <img src="/fish (1).png" style={{ width: "20px" }} />
+              <img src={fishIcon} style={{ width: "20px" }} />
             </label>
             <input
               id="fischart"
@@ -163,6 +206,18 @@ function AddFangForm(props) {
               type="text"
               onChange={(e) => setDatum(e.target.value)}
             />
+            <label htmlFor="file-upload" className="custom-file-upload">
+              <span className="material-symbols-outlined file-upload-icon">
+                upload
+              </span>
+              {selectedFileName || "Bild auswählen..."}
+            </label>
+            <input
+              onChange={handleImageFileSelect}
+              id="file-upload"
+              name="image"
+              type="file"
+            />
 
             <button onClick={addObjectToDatabase} className="upload-btn">
               <span className="material-symbols-outlined">cloud_upload</span>
@@ -170,8 +225,8 @@ function AddFangForm(props) {
           </form>
         </div>
       ) : (
-        <div style={{ paddingTop: "120px"}}>
-          <h1 style={{ textAlign: "center"}}>Fangtagebuch</h1>
+        <div style={{ paddingTop: "120px" }}>
+          <h1 style={{ textAlign: "center" }}>Fangtagebuch</h1>
           <button className="toggleFormBtn" onClick={toggleForm}>
             Neuen Fang hinzugügen
             <span className="material-symbols-outlined">add_circle</span>
