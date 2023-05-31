@@ -3,6 +3,7 @@ import { onValue, ref, remove, get } from "firebase/database";
 import { nanoid } from "nanoid";
 import { database } from "../Firebase";
 import { authentication } from "../Firebase";
+import fishIcon from "/public/fish (1).png";
 import "../styles/loggedInStyles.css";
 
 function DisplayLoggedInUserData(props) {
@@ -71,55 +72,60 @@ function DisplayLoggedInUserData(props) {
   return (
     <div>
       {data.map((item, index) => (
-        <div className="user-eintrag" key={index}>
-          <span
-            onClick={() => removeUserEntry(index)}
-            className="material-symbols-outlined delete-user-entry-btn"
-          >
-            do_not_disturb_on
-          </span>
-          <div className="user-single-item-container">
-            <div className="align-logo">
-              <img src="/fish (1).png" className="fish-icon" />
-              <p>Fischart:</p>
+        <div className="user-eintrag-wrapper" key={index}>
+          <div className="user-eintrag">
+            <span
+              onClick={() => removeUserEntry(index)}
+              className="material-symbols-outlined delete-user-entry-btn"
+            >
+              do_not_disturb_on
+            </span>
+            <div className="user-single-item-container">
+              <div className="align-logo">
+                <img src={fishIcon} className="fish-icon" />
+                <p>Fischart:</p>
+              </div>
+              <p>{item.fischart}</p>
             </div>
-            <p>{item.fischart}</p>
-          </div>
-          <div className="user-single-item-container">
-            <div className="align-logo">
-              <span className="material-symbols-outlined">calendar_month</span>
-              <p>Datum:</p>
+            <div className="user-single-item-container">
+              <div className="align-logo">
+                <span className="material-symbols-outlined">
+                  calendar_month
+                </span>
+                <p>Datum:</p>
+              </div>
+              <p>{item.datum}</p>
             </div>
-            <p>{item.datum}</p>
-          </div>
-          <div className="user-single-item-container">
-            <div className="align-logo">
-              <span className="material-symbols-outlined">width</span>
-              <p>Größe:</p>{" "}
+            <div className="user-single-item-container">
+              <div className="align-logo">
+                <span className="material-symbols-outlined">width</span>
+                <p>Größe:</p>{" "}
+              </div>
+              <p>{item.größe} cm</p>
             </div>
-            <p>{item.größe} cm</p>
-          </div>
-          <div className="user-single-item-container">
-            <div className="align-logo">
-              <span className="material-symbols-outlined">phishing</span>
-              <p>Köder:</p>
+            <div className="user-single-item-container">
+              <div className="align-logo">
+                <span className="material-symbols-outlined">phishing</span>
+                <p>Köder:</p>
+              </div>
+              <p>{item.köder}</p>
             </div>
-            <p>{item.köder}</p>
-          </div>
-          <div className="user-single-item-container">
-            <div className="align-logo">
-              <span className="material-symbols-outlined">schedule</span>
-              <p>Uhrzeit:</p>{" "}
+            <div className="user-single-item-container">
+              <div className="align-logo">
+                <span className="material-symbols-outlined">schedule</span>
+                <p>Uhrzeit:</p>{" "}
+              </div>
+              <p>{item.uhrzeit} Uhr</p>
             </div>
-            <p>{item.uhrzeit}</p>
-          </div>
-          <div className="user-single-item-container">
-            <div className="align-logo">
-              <span className="material-symbols-outlined">location_on</span>
-              <p>Gewässer:</p>{" "}
+            <div className="user-single-item-container">
+              <div className="align-logo">
+                <span className="material-symbols-outlined">location_on</span>
+                <p>Gewässer:</p>{" "}
+              </div>
+              <p>{item.gewässer}</p>
             </div>
-            <p>{item.gewässer}</p>
           </div>
+          <img className="user-img" src={item.imgUrl} />
         </div>
       ))}
     </div>
