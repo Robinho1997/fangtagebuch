@@ -1,0 +1,100 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+.navbar-buttons-div {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.lexikon-link-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.lexikon-link {
+    text-decoration: none;
+}
+
+.navbar button, .lexikon-link {
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  border-radius: 5px;
+  font-weight: 700;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  transition: font-size 1s;
+}
+
+.navbar button:hover, .lexikon-link:hover {
+    background-color: rgb(250, 188, 72);
+    transition: font-size 1s;
+    font-size: 25px;
+  }
+
+.logout-div {
+  margin-right: 50px;
+}
+
+.register-btn {
+  margin-right: 50px;
+}
+
+.navbar span {
+  font-size: 20px;
+}
+
+
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 10px;
+  }
+  .fisherman-icon {
+    width: 50px;
+  }
+  .navbar-buttons-div {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar button {
+    padding: 10px;
+    transition: none;
+    font-size: 10px;
+  }
+
+  .navbar button:hover {
+    transition: none;
+    font-size: 10px;
+  }
+
+  .register-btn {
+    margin-right: 20px;
+  }
+
+  .logout-div {
+    display: flex;
+    justify-content: end;
+    margin-right: 15px;
+    width: 100%;
+  }
+}
