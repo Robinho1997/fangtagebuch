@@ -26,7 +26,7 @@ function LoginUser(props) {
   }
 
   return (
-    <div>
+    <div style={{zIndex:1000}}>
       {props.displayLoginForm && (
         <div className={`authentification-form `}>
           <button

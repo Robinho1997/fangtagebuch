@@ -29,7 +29,7 @@ function RegisterUser(props) {
   }
 
   return (
-    <div>
+    <div style={{zIndex:1000}}>
       {props.displayRegisterForm && (
         <div className="authentification-form">
           <button
