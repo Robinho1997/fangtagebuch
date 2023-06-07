@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/homepage.css";
 import phoneImg from "/public/phone-img.png";
+
 function Homepage(props) {
   return (
     <main className="homepage">
