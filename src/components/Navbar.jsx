@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { authentication } from "../Firebase";
 import icon from "/public/fisherman.svg";
+import "../styles/navbar.css";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar(props) {
+  const [linkPath, setLinkPath] = useState("");
+
   function handleSignOut() {
     signOut(authentication)
       .then(() => {
@@ -16,7 +20,15 @@ function Navbar(props) {
 
   return (
     <nav className="navbar">
-      <img className="fisherman-icon" src={icon} />
+      <div className="lexikon-link-container">
+        <img className="fisherman-icon" src={icon} />
+        <Link
+          className="lexikon-link"
+          to={useLocation().pathname === "/lexikon" ? "/" : "/lexikon"}
+        >
+          {useLocation().pathname === "/lexikon" ? "Home" : "Lexikon"}
+        </Link>
+      </div>
       {!props.user ? (
         <div className="navbar-buttons-div">
           <button
