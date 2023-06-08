@@ -18,11 +18,12 @@
 }
 
 .styled-table {
+  margin-inline: auto;
   border-collapse: collapse;
-  margin: 0 auto;
+  margin-top: 150px;
   font-size: 0.9em;
   font-family: sans-serif;
-  width: 1000px;
+  width: 900px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -54,14 +55,86 @@
   color: #009879;
 }
 
-@media (max-width: 1000px) {
-  .header {
-    text-align: center;
-    margin-top: 120px;
-  }
-  .styled-table {
-    width: 300px;
+a {
+  text-decoration: none;
+  color: black;
+}
 
-    font-size: 0.85em;
+@media (max-width: 1000px) {
+  .styled-table {
+    width: 330px;
+    margin-top: 120px;
+    font-size: 0.75em;
   }
+
+  .styled-table th,
+  .styled-table td {
+    padding: 5px 7px;
+  }
+}
+
+.lexikon-eintrag-container {
+  min-height: 100vh;
+  margin-top: 120px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.lexikon-kategorie-btn-div {
+  display: flex;
+  gap: 4px;
+}
+
+.lexikon-kategorie-btn-div a {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid orange;
+  background-color: white;
+}
+
+.lexikon-kategorie-btn-div a:hover {
+  background-color: orange;
+}
+
+.flex {
+  display: flex;
+}
+
+.kategorie-container {
+  width: 50%;
+}
+
+.kategorie-container p {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.header-kategorie {
+  background-color: orange;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.systematik-header {
+  font-size: 25px;
+  color: rgb(34, 33, 33);
+}
+
+.systematik-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.systematik-tr td {
+  border-bottom: 1px solid grey;
+  padding: 10px 20px;
+}
+
+.fisch-img {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 50px;
 }
