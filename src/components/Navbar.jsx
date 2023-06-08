@@ -6,7 +6,7 @@ import "../styles/navbar.css";
 import { Link, useLocation } from "react-router-dom";
 
 function Navbar(props) {
-  const [linkPath, setLinkPath] = useState("");
+ 
 
   function handleSignOut() {
     signOut(authentication)
