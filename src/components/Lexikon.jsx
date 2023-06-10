@@ -46,7 +46,7 @@ function Lexikon() {
             familie={"Echte Barsche (Percidae)"}
           />
           <TableRow
-            name={"Brassen"}
+            name={"Brasse"}
             gattung={"Abramis brama"}
             familie={"Karpfenfische (Cyprinidae)"}
           />
