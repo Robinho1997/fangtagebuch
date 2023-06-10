@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { set, push, ref } from "firebase/database";
 import { storage, database } from "../Firebase";
 import {
@@ -9,7 +9,7 @@ import {
 import fishIcon from "/public/fish (1).png";
 
 function AddFangForm(props) {
-  const userId = props.user.uid;
+  const userId =JSON.parse(localStorage.getItem("user"));
 
   const [fischart, setFischart] = useState(null);
   const [größe, setGröße] = useState(null);
@@ -85,7 +85,7 @@ function AddFangForm(props) {
       };
 
       handleImageUpload().then(() => {
-        const userRef = ref(database, `user/${userId}/data`);
+        const userRef = ref(database, `user/${userId.uid}/data`);
         const newChildRef = push(userRef);
         inputData.imgUrl = imageUrl;
         set(newChildRef, inputData);
