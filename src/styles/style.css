@@ -132,9 +132,6 @@ button {
   }
 }
 
-
-
-
 .custom-file-upload {
   border: 1px solid grey;
   display: flex;
@@ -194,7 +191,6 @@ button {
   border-radius: 5px;
   border: 1px solid grey;
   background-color: white;
-
 }
 
 .toggleFormBtn:hover {
@@ -241,6 +237,16 @@ button {
 ! register styles
 */
 
+.login-link {
+  padding: 10px 50px;
+  background-color: orange;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+
+  font-size: 20px;
+}
+
 .authentification-form {
   position: fixed;
   top: 50%;
@@ -251,11 +257,11 @@ button {
   max-width: 300px;
   border-radius: 10px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: black;
   backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 30px 30px 15px rgba(0, 0, 0, 0.5);
-  padding: 2%;
+  padding: 5%;
 }
 
 .authentification-form h2 {
@@ -274,11 +280,4 @@ button {
   border-radius: 15px;
   width: 95%;
   font-size: 20px;
-}
-
-@media(max-width:500px) {
-  .authentification-form {
-    background-color: rgb(249, 197, 102);
- 
-  }
 }

@@ -3,6 +3,10 @@
   justify-content: center;
 }
 
+.dashboard-wrapper {
+  min-height: 100vh;
+}
+
 .user-eintrag {
   width: 400px;
   margin-bottom: 60px;

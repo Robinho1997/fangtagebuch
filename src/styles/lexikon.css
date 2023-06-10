@@ -57,20 +57,6 @@
 
 a {
   text-decoration: none;
-  color: black;
-}
-
-@media (max-width: 1000px) {
-  .styled-table {
-    width: 330px;
-    margin-top: 120px;
-    font-size: 0.75em;
-  }
-
-  .styled-table th,
-  .styled-table td {
-    padding: 5px 7px;
-  }
 }
 
 .lexikon-eintrag-container {
@@ -82,6 +68,8 @@ a {
 }
 
 .lexikon-kategorie-btn-div {
+  flex-wrap: wrap;
+  flex-grow: 1;
   display: flex;
   gap: 4px;
 }
@@ -91,10 +79,14 @@ a {
   border-radius: 5px;
   border: 1px solid orange;
   background-color: white;
+  color: orange;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .lexikon-kategorie-btn-div a:hover {
   background-color: orange;
+  color: white;
 }
 
 .flex {
@@ -137,4 +129,45 @@ a {
   margin: 0 auto;
   display: flex;
   margin-top: 50px;
+}
+
+@media (max-width: 900px) {
+  .styled-table {
+    width: 90%;
+    margin-top: 120px;
+    font-size: 0.7em;
+  }
+
+  .styled-table th,
+  .styled-table td {
+    padding: 5px 7px;
+  }
+
+  .kategorie-container {
+    width: 100%;
+    margin-inline: 2%;
+  }
+
+  .kategorie-container p {
+    font-size: 20px;
+    line-height: 30px;
+    margin-inline: 3%;
+  }
+
+  .lexikon-eintrag-container {
+    margin-top: 100px;
+  }
+
+  .lexikon-kategorie-btn-div {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lexikon-kategorie-btn-div a {
+    padding: 10px 10px;
+    min-width: 150px;
+
+    font-size: 15px;
+    margin-inline: 2%;
+  }
 }

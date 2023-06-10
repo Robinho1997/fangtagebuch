@@ -20,16 +20,17 @@
 }
 
 .lexikon-link-container {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .lexikon-link {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-.navbar button, .lexikon-link {
+.navbar button,
+.navbar-link {
   padding: 10px 20px;
   background-color: orange;
   color: white;
@@ -43,21 +44,20 @@
   transition: font-size 1s;
 }
 
-.lexikon-link {
-  font-size: 30px;
+.navbar-link {
+  font-size: 20px;
 }
 
-.lexikon-link:hover {
+.navbar-link:hover {
   transition: font-size 1s;
-  font-size: 35px;
+  font-size: 24px;
 }
 
 .navbar button:hover {
-    background-color: rgb(250, 188, 72);
-    transition: font-size 1s;
-    font-size: 15px;
-  }
-
+  background-color: rgb(250, 188, 72);
+  transition: font-size 1s;
+  font-size: 15px;
+}
 
 .logout-div {
   margin-right: 50px;
@@ -70,8 +70,6 @@
 .navbar span {
   font-size: 20px;
 }
-
-
 
 @media (max-width: 600px) {
   .navbar {
@@ -86,6 +84,10 @@
     justify-content: center;
     align-items: center;
   }
+  .navbar-link {
+    font-size: 15px;
+    padding-block: 11.6px;
+  }
   .navbar button {
     padding: 10px;
     transition: none;
@@ -94,7 +96,12 @@
 
   .navbar button:hover {
     transition: none;
-    font-size: 10px;
+    font-size: 15px;
+  }
+
+  .navbar-link:hover {
+    transition: none;
+    font-size: 15px;
   }
 
   .register-btn {
