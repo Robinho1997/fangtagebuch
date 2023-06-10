@@ -2,14 +2,14 @@ import React, { useContext } from "react";
 import { Context } from "./Context";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import AddFangForm from "./components/AddFangForm";
-import DisplayLoggedInUserData from "./components/DisplayLoggedInUserData";
+
+import Dashboard from "./components/Dashboard";
 import RegisterUser from "./components/RegisterUser";
 import LoginUser from "./components/LoginUser";
 import Homepage from "./components/Homepage";
 import Footer from "./components/Footer";
 import Lexikon from "./components/Lexikon";
-import LexikonEintrag from "./components/KategorieLeiste";
+
 import Beschreibung from "./components/LexikonEintragAbschnitte/Beschreibung";
 import Lebensweise from "./components/LexikonEintragAbschnitte/Lebensweise";
 import Fortpflanzung from "./components/LexikonEintragAbschnitte/Fortpflanzung";
@@ -36,10 +36,7 @@ function App() {
         setDisplayLoginForm={setDisplayLoginForm}
         user={user}
       />
-      {user && ( // wenn eingeloggt fangform zeigen
-        <AddFangForm user={user} />
-      )}
-      {user && <DisplayLoggedInUserData user={user} />}
+
       <RegisterUser
         displayRegisterForm={displayRegisterForm}
         setDisplayRegisterForm={setDisplayRegisterForm}
@@ -61,11 +58,10 @@ function App() {
             />
           }
         />
+        <Route path="/fangtagebuch" element={<Dashboard user={user} />} />
         <Route path="/lexikon" element={<Lexikon />} />
-
         <Route path="lexikon/:name/beschreibung" element={<Beschreibung />} />
         <Route path="lexikon/:name/lebensweise" element={<Lebensweise />} />
-
         <Route path="lexikon/:name/fortpflanzung" element={<Fortpflanzung />} />
         <Route path="lexikon/:name/verbreitung" element={<Verbreitung />} />
         <Route path="lexikon/:name/bestimmung" element={<Bestimmung />} />
@@ -73,7 +69,6 @@ function App() {
         <Route path="lexikon/:name/gefährdung" element={<Gefährdung />} />
         <Route path="lexikon/:name/bedeutung" element={<Bedeutung />} />
         <Route path="lexikon/:name/fangmethode" element={<Fangmethode />} />
-      
       </Routes>
       <div className="footer">
         <Footer />
