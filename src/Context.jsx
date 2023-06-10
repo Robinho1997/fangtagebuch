@@ -20,6 +20,10 @@ function ContextProvider(props) {
     });
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(user));
+  }, [user]);
+
   return (
     <Context.Provider
       value={{
