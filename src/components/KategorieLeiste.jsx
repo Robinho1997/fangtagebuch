@@ -1,13 +1,4 @@
 import React, { useState } from "react";
-import Beschreibung from "./LexikonEintragAbschnitte/Beschreibung";
-import Lebensweise from "./LexikonEintragAbschnitte/Lebensweise";
-import Fortpflanzung from "./LexikonEintragAbschnitte/Fortpflanzung";
-import Verbreitung from "./LexikonEintragAbschnitte/Verbreitung";
-import Bestimmung from "./LexikonEintragAbschnitte/Fortpflanzung";
-import Merkmale from "./LexikonEintragAbschnitte/Merkmale";
-import Gefährdung from "./LexikonEintragAbschnitte/Gefährdung";
-import Bedeutung from "./LexikonEintragAbschnitte/Bedeutung";
-import Fangmethode from "./LexikonEintragAbschnitte/Fangmethode";
 import { Link, useParams } from "react-router-dom";
 
 function KategorieLeiste() {
