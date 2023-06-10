@@ -19,10 +19,6 @@ function KategorieLeiste() {
       <Link to={`/lexikon/${name}/lebensweise`}>Lebensweise</Link>
       <Link to={`/lexikon/${name}/fortpflanzung`}>Fortpflanzung</Link>
       <Link to={`/lexikon/${name}/verbreitung`}>Verbreitung</Link>
-      <Link to={`/lexikon/${name}/bestimmung`}>Bestimmung</Link>
-      <Link to={`/lexikon/${name}/merkmale`}>Merkmale</Link>
-      <Link to={`/lexikon/${name}/gefährdung`}>Gefährdung</Link>
-      <Link to={`/lexikon/${name}/bedeutung`}>Bedeutung</Link>
       <Link to={`/lexikon/${name}/fangmethode`}>Fangmethode</Link>
     </div>
   );
