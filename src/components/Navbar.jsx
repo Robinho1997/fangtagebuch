@@ -6,8 +6,6 @@ import "../styles/navbar.css";
 import { Link, useLocation } from "react-router-dom";
 
 function Navbar(props) {
- 
-
   function handleSignOut() {
     signOut(authentication)
       .then(() => {
@@ -23,11 +21,16 @@ function Navbar(props) {
       <div className="lexikon-link-container">
         <img className="fisherman-icon" src={icon} />
         <Link
-          className="lexikon-link"
+          className="navbar-link"
           to={useLocation().pathname === "/lexikon" ? "/" : "/lexikon"}
         >
           {useLocation().pathname === "/lexikon" ? "Home" : "Lexikon"}
         </Link>
+        {props.user && (
+          <Link className="navbar-link" to={"/fangtagebuch"}>
+            Fangtagebuch
+          </Link>
+        )}
       </div>
       {!props.user ? (
         <div className="navbar-buttons-div">
@@ -39,10 +42,7 @@ function Navbar(props) {
             Login
             <span className="material-symbols-outlined">login</span>
           </button>
-          <button onClick={handleSignOut}>
-            Logout
-            <span className="material-symbols-outlined">logout</span>
-          </button>
+
           <button
             className="register-btn"
             onClick={() => {
@@ -55,10 +55,9 @@ function Navbar(props) {
         </div>
       ) : (
         <div className="logout-div">
-          <button onClick={handleSignOut}>
-            Logout
-            <span className="material-symbols-outlined">logout</span>
-          </button>
+          <Link className="navbar-link" to={"/"} onClick={handleSignOut}>
+            Logout <span className="material-symbols-outlined">logout</span>
+          </Link>
         </div>
       )}
     </nav>
