@@ -14,79 +14,79 @@ function Beschreibung() {
   useEffect(() => {
     switch (name) {
       case "Aal":
-        setImg("/public/fische/aal.webp");
+        setImg("/fische/aal.webp");
         break;
       case "Äsche":
-        setImg("/public/fische/äsche.webp");
+        setImg("/fische/äsche.webp");
         break;
       case "Aland":
-        setImg("/public/fische/aland.webp");
+        setImg("/fische/aland.webp");
         break;
       case "Bachforelle":
-        setImg("/public/fische/bachforelle.webp");
+        setImg("/fische/bachforelle.webp");
         break;
       case "Barbe":
-        setImg("/public/fische/barbe.webp");
+        setImg("/fische/barbe.webp");
         break;
       case "Barsch":
-        setImg("/public/fische/barsch.webp");
+        setImg("/fische/barsch.webp");
         break;
       case "Brasse":
-        setImg("/public/fische/brassen.png");
+        setImg("/fische/brassen.png");
         break;
       case "Döbel":
-        setImg("/public/fische/doebel.webp");
+        setImg("/fische/doebel.webp");
         break;
       case "Giebel":
-        setImg("/public/fische/giebel.png");
+        setImg("/fische/giebel.png");
         break;
       case "Gründling":
-        setImg("/public/fische/gruendling.webp");
+        setImg("/fische/gruendling.webp");
         break;
       case "Güster":
-        setImg("/public/fische/guester.png");
+        setImg("/fische/guester.png");
         break;
       case "Hasel":
-        setImg("/public/fische/hasel.webp");
+        setImg("/fische/hasel.webp");
         break;
       case "Hecht":
-        setImg("/public/fische/hecht.webp");
+        setImg("/fische/hecht.webp");
         break;
       case "Karausche":
-        setImg("/public/fische/karausche.png");
+        setImg("/fische/karausche.png");
         break;
       case "Karpfen":
-        setImg("/public/fische/karpfen.webp");
+        setImg("/fische/karpfen.webp");
         break;
       case "Nase":
-        setImg("/public/fische/nase.webp");
+        setImg("/fische/nase.webp");
         break;
       case "Rapfen":
-        setImg("/public/fische/rapfen.webp");
+        setImg("/fische/rapfen.webp");
         break;
       case "Regenbogenforelle":
-        setImg("/public/fische/regenbogenforelle.webp");
+        setImg("/fische/regenbogenforelle.webp");
         break;
       case "Rotauge":
-        setImg("/public/fische/rotauge.webp");
+        setImg("/fische/rotauge.webp");
         break;
       case "Rotfeder":
-        setImg("/public/fische/rotfeder.png");
+        setImg("/fische/rotfeder.png");
         break;
       case "Schleie":
-        setImg("/public/fische/schleie.webp");
+        setImg("/fische/schleie.webp");
         break;
       case "Ukelei":
-        setImg("/public/fische/ukelei.webp");
+        setImg("/fische/ukelei.webp");
         break;
       case "Wels":
-        setImg("/public/fische/wels.webp");
+        setImg("/fische/wels.webp");
         break;
       case "Zährte":
-        setImg("/public/fische/zaehrte.webp");
+        setImg("/fische/zaehrte.webp");
         break;
       case "Zander":
-        setImg("/public/fische/zander.webp");
+        setImg("/fische/zander.webp");
         break;
     }
   }, []);
