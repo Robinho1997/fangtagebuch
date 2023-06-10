@@ -2,14 +2,12 @@ import React, { useContext } from "react";
 import { Context } from "./Context";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-
 import Dashboard from "./components/Dashboard";
 import RegisterUser from "./components/RegisterUser";
 import LoginUser from "./components/LoginUser";
 import Homepage from "./components/Homepage";
 import Footer from "./components/Footer";
 import Lexikon from "./components/Lexikon";
-
 import Beschreibung from "./components/LexikonEintragAbschnitte/Beschreibung";
 import Lebensweise from "./components/LexikonEintragAbschnitte/Lebensweise";
 import Fortpflanzung from "./components/LexikonEintragAbschnitte/Fortpflanzung";
@@ -19,6 +17,7 @@ import Merkmale from "./components/LexikonEintragAbschnitte/Merkmale";
 import Gefährdung from "./components/LexikonEintragAbschnitte/Gefährdung";
 import Bedeutung from "./components/LexikonEintragAbschnitte/Bedeutung";
 import Fangmethode from "./components/LexikonEintragAbschnitte/Fangmethode";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const {
@@ -31,6 +30,7 @@ function App() {
 
   return (
     <div className="app">
+    <ScrollToTop />
       <Navbar
         setDisplayRegisterForm={setDisplayRegisterForm}
         setDisplayLoginForm={setDisplayLoginForm}
