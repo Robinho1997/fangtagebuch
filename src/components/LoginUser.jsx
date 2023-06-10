@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { authentication } from "../Firebase";
+import { redirect, useNavigate , Link } from "react-router-dom";
 
 function LoginUser(props) {
   const [inputOfEmail, setInputOfEmail] = useState("");
   const [inputOfPassword, setInputOfPassword] = useState("");
   const [loginMessage, setLoginMessage] = useState("Login erfolgreich!");
+  const navigate = useNavigate();
 
   function handleSignIn(e) {
     e.preventDefault();
@@ -14,8 +16,7 @@ function LoginUser(props) {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-
-        console.log("Logged in");
+        navigate("/fangtagebuch")
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -23,10 +24,11 @@ function LoginUser(props) {
         console.log("errorCode:" + errorCode + "errorMessage:" + errorMessage);
         setLoginMessage(errorMessage);
       });
+ 
   }
 
   return (
-    <div style={{zIndex:1000}}>
+    <div style={{ zIndex: 1000 }}>
       {props.displayLoginForm && (
         <div className={`authentification-form `}>
           <button
@@ -48,15 +50,15 @@ function LoginUser(props) {
                 type="email"
                 placeholder="Email"
               />
-              <input
+              <input style={{marginBottom:"30px"}}
                 value={inputOfPassword}
                 onChange={(e) => setInputOfPassword(e.target.value)}
                 type="password"
                 placeholder="Passwort"
               />
-              <button className="form-btn" onClick={handleSignIn}>
+              <Link className="login-link" to={"/fangtagebuch"} onClick={handleSignIn}>
                 Login
-              </button>
+              </Link>
             </div>
           )}
         </div>
